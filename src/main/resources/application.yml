@@ -1,0 +1,15 @@
+spring:
+  jpa:
+    properties:
+      hibernate:
+        #Enable second level cache
+        cache.use_second_level_cache: true
+        #Enable query cache
+        cache.use_query_cache: false
+        #Specify the cache region factory class
+        cache.region.factory_class: org.hibernate.cache.jcache.JCacheRegionFactory
+      #Set the shared cache mode
+      javax.persistence.sharedCache.mode: ENABLE_SELECTIVE
+  cache:
+    jcache:
+      config: classpath:ehcache.xml
